@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+:root{
+    --custom_input_color: #F89833;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.loaders {
+    display: grid;
+    max-width: 100%;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1.25rem;
+    padding: 20px;
+}
+
+.loader {
+    border-radius: .25rem;
+    border: 1px solid #dfdfeb;
+    min-height: 150px;
+    cursor: pointer;
+    display: grid;
+    grid-template-columns: none;
+    justify-items: center;
+    align-items: center;
+}
+
+.model_customization {
+    position: fixed;
+    top: 0;
+    inset: 0;
+    backdrop-filter: blur(5px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.model_customization .model_bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+}
+
+.model_customization .model_content {
+    width: 75vw;
+    height: max-content;
+    background-color: #fafafa;
+    z-index: 1;
+}
+
+.model_customization .model_content .model_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+}
+
+.model_customization .model_content .model_header h5 {
+    font-size: 1em;
+    color: #313533;
+}
+
+.model_customization .model_content .model_header .btn_close {
+    padding: 5px;
+    background-color: transparent;
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
+
+.model_customization .model_content .model_header .btn_close i {
+    font-size: 24px;
+}
+
+.model_customization .model_content .model_body {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 20px 20px;
+}
+
+.model_customization .model_content .model_body .load_file {
+    width: 33.33333333%;
+}
+
+.model_customization .model_content .model_body .load_file .loader {
+    height: 100%;
+}
+
+.model_customization .model_content .model_body .widget {
+    width: 66.66666666%;
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+.model_customization .model_content .model_body .widget .costom_widget {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+}
+
+.model_customization .model_content .model_body .widget .costom_widget span {
+    font-size: 1em;
+    color: #313533;
+}
+
+.model_customization .model_content .model_body .widget .costom_widget .size_group_container,
+.model_customization .model_content .model_body .widget .costom_widget .speed_group_container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.model_customization .model_content .model_body .widget .costom_widget .size_group_container .size_group,
+.model_customization .model_content .model_body .widget .costom_widget .speed_group_container .speed_group {
+    width: 100%;
+    background-color: #e9e9ef;
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.5s linear;
+}
+
+.model_customization .model_content .model_body .widget .costom_widget .size_group_container .size_group.active,
+.model_customization .model_content .model_body .widget .costom_widget .speed_group_container .speed_group.active {
+    background-color: #b2b2b6;
+    color: #fafafa;
+}
+
+.input_color_group {
+    width: 100%;
+}
+
+.input_color_group input {
+    width: 100%;
+    padding: 5px 10px;
+    background-image: linear-gradient(to right, var(--custom_input_color) 0%, var(--custom_input_color) 30px, rgba(0, 0, 0, 0) 31px, rgba(0, 0, 0, 0) 100%) !important;
+    background-position: left top, left top !important;
+    background-size: auto, 32px 16px !important;
+    background-repeat: repeat-y, repeat-y !important;
+    background-origin: padding-box, padding-box !important;
+    padding-left: 40px !important;
+    border: 1px solid #313533;
+    outline: none;
+}
+
+.model_customization .model_content .model_body .code_block_container {
+    width: 100%;
+}
