@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-:root{
+
+:root {
     --custom_input_color: #F89833;
 }
 
@@ -40,6 +41,14 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: all 0.5s ease;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.model_customization.active {
+    visibility: visible;
+    opacity: 1;
 }
 
 .model_customization .model_bg {
@@ -67,7 +76,7 @@ body {
     color: #313533;
 }
 
-.model_customization .model_content .model_header .btn_close {
+.model_customization .model_content .model_header .model_customization_btn_close {
     padding: 5px;
     background-color: transparent;
     cursor: pointer;
@@ -75,7 +84,7 @@ body {
     outline: none;
 }
 
-.model_customization .model_content .model_header .btn_close i {
+.model_customization .model_content .model_header .model_customization_btn_close i {
     font-size: 24px;
 }
 
@@ -88,10 +97,9 @@ body {
 
 .model_customization .model_content .model_body .load_file {
     width: 33.33333333%;
-}
-
-.model_customization .model_content .model_body .load_file .loader {
-    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .model_customization .model_content .model_body .widget {
@@ -122,6 +130,9 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: -moz-none;
 }
 
 .model_customization .model_content .model_body .widget .costom_widget .size_group_container .size_group,

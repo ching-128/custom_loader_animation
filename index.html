@@ -23,6 +23,28 @@
         rel="stylesheet"
         href="components/spinners.css"
     >
+
+    <!-- custom loader styles  -->
+    <style type="text/css">
+        .custom_loader {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            padding: 12px;
+            background:
+                conic-gradient(from 135deg at top, var(--custom_input_color) 90deg, #0000 0) 0 calc(50% - 8px)/34px 17px,
+                radial-gradient(farthest-side at bottom left, #0000 calc(100% - 12px), var(--custom_input_color) calc(100% - 10px) 99%, #0000) top right/50% 50% content-box content-box,
+                radial-gradient(farthest-side at top, #0000 calc(100% - 12px), var(--custom_input_color) calc(100% - 10px) 99%, #0000) bottom /100% 50% content-box content-box;
+            background-repeat: no-repeat;
+            animation: loader_anim 1s infinite linear;
+        }
+    
+        @keyframes loader_anim {
+            100% {
+                transform: rotate(1turn)
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -2901,22 +2923,14 @@
                 <h5 class="modal-title">Customize Loader</h5>
                 <button
                     type="button"
-                    class="btn_close"
+                    class="model_customization_btn_close"
                 >
                     <i class="fa-solid fa-xmark"></i>
                 </button>
             </div>
             <div class="model_body">
                 <div class="load_file">
-                    <div class="loader">
-                        <div
-                            class="sp-1"
-                            data-colors="1"
-                            data-size="50,8"
-                            data-speed="1,0"
-                            data-template="1"
-                        ></div>
-                    </div>
+                    <div class="custom_loader"></div>
                 </div>
                 <div class="widget">
                     <div class="costom_widget">
@@ -2950,6 +2964,8 @@
             </div>
         </div>
     </div>
+
+    <script src="script.js"></script>
 </body>
 
 </html>
